@@ -40,3 +40,8 @@ func writeLocalFile(filename, data string) error {
 	}
 	return nil
 }
+
+func readLocalFile(filename string) *strings.Reader {
+	infos, _ := ioutil.ReadFile(filename)
+	return strings.NewReader(string(infos))
+}
