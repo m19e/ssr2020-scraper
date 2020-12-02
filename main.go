@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"log"
 	"os"
 	"strings"
@@ -29,4 +30,12 @@ func main() {
 			fmt.Println(url)
 		}
 	})
+}
+
+func writeHtmlFile(filename, data string) {
+	b := []byte(data)
+	err := ioutil.WriteFile(filename, b, 0666)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
