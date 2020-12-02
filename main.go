@@ -32,7 +32,7 @@ func main() {
 	})
 }
 
-func writeHtmlFile(filename, data string) error {
+func writeLocalFile(filename, data string) error {
 	b := []byte(data)
 	err := ioutil.WriteFile(filename, b, 0666)
 	if err != nil {
