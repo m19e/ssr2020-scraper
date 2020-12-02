@@ -22,3 +22,6 @@
 
 # output dir
 public/
+
+# html
+*.html
