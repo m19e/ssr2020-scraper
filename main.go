@@ -2,12 +2,21 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"os"
 
 	"github.com/PuerkitoBio/goquery"
+	"github.com/joho/godotenv"
 )
 
+func init() {
+	if err := godotenv.Load(); err != nil {
+		log.Fatal("Error loading .env file")
+	}
+}
+
 func main() {
-	doc, err := goquery.NewDocument("https://github.com/PuerkitoBio/goquery")
+	doc, err := goquery.NewDocument(os.Getenv("TARGET_URL"))
 	if err != nil {
 		fmt.Print("url scarapping failed")
 	}
