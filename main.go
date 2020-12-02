@@ -19,7 +19,7 @@ func init() {
 func main() {
 	doc, err := goquery.NewDocument(os.Getenv("TARGET_URL"))
 	if err != nil {
-		fmt.Print("url scarapping failed")
+		fmt.Print("url scraping failed")
 	}
 	doc.Find("a").Each(func(_ int, s *goquery.Selection) {
 		url, _ := s.Attr("href")
