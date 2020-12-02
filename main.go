@@ -17,9 +17,9 @@ func init() {
 }
 
 func main() {
-	url := os.Getenv("TARGET_URL")
+	target := os.Getenv("TARGET_URL")
 
-	doc, err := goquery.NewDocument(url)
+	doc, err := goquery.NewDocument(target)
 	if err != nil {
 		fmt.Print("url scraping failed")
 	}
