@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/joho/godotenv"
@@ -22,6 +23,8 @@ func main() {
 	}
 	doc.Find("a").Each(func(_ int, s *goquery.Selection) {
 		url, _ := s.Attr("href")
-		fmt.Println(url)
+		if !strings.Contains(url, "/") {
+			fmt.Println(url)
+		}
 	})
 }
